@@ -13,16 +13,16 @@ def func_pdfChecker(name):
                 break
         return text_done
 
+def func_writeToDoneText():
+    list_of_names = []
+    with open('ListOfNames.txt', encoding='utf-8') as list_names:
+        list_of_names = list_names.readlines()
+    list_names.close()
 
-list_of_names = []
-with open('ListOfNames.txt', encoding='utf-8') as list_names:
-    list_of_names = list_names.readlines()
-list_names.close()
-
-with open('AgroBookNamesDone.txt', 'w') as ff:
-    for name in list_of_names:
-        if name != 'None \n':
+    with open('AgroBookNamesDone.txt', 'w') as ff:
+        for name in list_of_names:
+            if name != 'None \n':
             text = func_pdfChecker(name.strip())
             ff.write(text)
             print(text)
-ff.close()
+    ff.close()
