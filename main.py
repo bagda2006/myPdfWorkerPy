@@ -25,4 +25,4 @@ def func_writeToDoneText():
             text = func_pdfChecker(name.strip())
             ff.write(text)
             print(text)
-    ff.close()
+        ff.close()
